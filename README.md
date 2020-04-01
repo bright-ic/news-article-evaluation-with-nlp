@@ -19,6 +19,6 @@ Javascript, Node js, Express.
 aylien API - for natural language processing
 
 ## Note
-The natural labguage processing is done with https://aylien.com/ provided api
+The natural language processing is done with https://aylien.com/ provided api
 You will need to signup with them to get your own api key and app ID then assign to AYLIEN_API_KEY and AYLIEN_APP_ID varriable in the .env file.
 You need the api key for the app to work.
