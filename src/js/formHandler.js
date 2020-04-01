@@ -13,6 +13,7 @@ function handleSubmit(event) {
     console.log("::: Form Submittion in Progress :::");
     let submitButton = document.getElementById("submit");
     submitButton.textContent = "Submitting, please wait ...";
+    document.getElementById('results').innerHTML = "";
 
     (async function func(){
         try {
@@ -36,9 +37,10 @@ function handleSubmit(event) {
                 docFrag.appendChild(text);
                 docFrag.appendChild(polarity);
                 docFrag.appendChild(subjectivity);
-                const result =  document.getElementById('results');
+                let result =  document.getElementById('results');
                 result.innerHTML = "";
                 result.appendChild(docFrag);
+                result= ""
                 
                 //enable form submittion
                 isSubmitting = false;
@@ -69,7 +71,8 @@ const submit = async (text) => {
       return response;
     }
     catch(err) {
-      return {message: err.message, data: null}
+        let msg = err.message !== "Please enter text or blog url." ? "Failed! The server was not able to respond." : err.message;
+      return {message: msg, data: null}
     }
 }
 

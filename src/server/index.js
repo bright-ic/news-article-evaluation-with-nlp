@@ -1,4 +1,3 @@
-var path = require('path')
 const express = require('express');
 const AYLIENTextAPI = require('aylien_textapi');
 const cors = require("cors");
