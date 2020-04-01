@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>News Evaluation App</title>
+    </head>
+
+    <body>
+
+        <header>
+            <nav><button class="btnLink aboutLink">About</button></nav>
+        </header>
+
+        <main>
+            <div class="appTitle">
+                NEWS EVALUATION APP WITH NLP
+            </div>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Enter text or blog/news article url">
+                    <input type="submit" name="submit" id="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <strong>Results:</strong>
+                <div id="results"></div>
+            </section>
+
+            <div class="about" id="about">
+                <div class="content">
+                   <div class="title">About App</div>
+                    <div class="aboutTextContainer">
+                        This app uses natural language processing to evaluate news/articles so as to ascertain
+                             it's polarity and subjectivity (ie. wether it's opinion or fact based)
+                    </div>
+                    <div class="btnContainer"><button class="close">Close</button></div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p> Designed by Bright Onwukwe </p>
+        </footer>
+    </body>
+</html>
