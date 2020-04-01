@@ -5,7 +5,6 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const port = process.env.PORT || 3000;
 
 const aylienBaseUrl = "https://api.aylien.com/api/v1";
 var aylienAAPI = new AYLIENTextAPI({
@@ -24,8 +23,8 @@ app.get('/', function (req, res) {
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(port, function () {
-    console.log('Example app listening on port !'+port)
+app.listen(3000, function () {
+    console.log('Example app listening on port 3000 !')
 })
 
 app.get('/evaluate/url', function (req, res) {

@@ -1,7 +1,6 @@
 let isSubmitting = false;
 function handleSubmit(event) {
-    event.preventDefault()
-    console.log("is submiting is " + isSubmitting.toString())
+    event.preventDefault();
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value;
@@ -15,8 +14,10 @@ function handleSubmit(event) {
         return;
     }
     isSubmitting = true;
-    console.log("is submiting is " + isSubmitting.toString())
     console.log("::: Form Submittion in Progress :::");
+    let submitButton = document.getElementById("submit");
+    submitButton.textContent = "Submitting, please wait ...";
+
     fetch(`${url}?q=${encodeURIComponent(formText)}`)
     .then(res => res.json())
     .then(function(response) {
@@ -49,11 +50,13 @@ function handleSubmit(event) {
         }
         //enable form submittion
         isSubmitting = false;
+        submitButton.textContent = "Submit";
     })
     .catch(err => { 
-        alert(err.message);
         //enable form submittion
         isSubmitting = false;
+        submitButton.textContent = "Submit";
+        alert(err.message);
     })
 }
 

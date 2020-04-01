@@ -17,8 +17,8 @@
             </div>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" placeholder="Enter text or blog/news article url">
-                    <input type="submit" name="submit" id="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Enter text or blog/news article url" aria-label="Enter text or blog article url">
+                    <Button type="submit" name="submit" id="submit" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)" aria-label="Submit">Submit</button>
                 </form>
             <section>
 
@@ -41,5 +41,14 @@
         <footer>
             <p> Designed by Bright Onwukwe </p>
         </footer>
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
     </body>
 </html>
